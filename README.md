@@ -1,2 +1,2 @@
-# PapyrusEngine
+# Papyrus
 Papyrus Engine. 
