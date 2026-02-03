@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "..\Projects\Sandbox\Sandbox.vcxproj", "{BDF7665C-BF04-4AEE-B81A-508EB1F3A1A8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Papyrus", "Papyrus\Papyrus.vcxproj", "{B2490BD5-8C76-47B7-88D4-EEE6FFA363EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2490BD5-8C76-47B7-88D4-EEE6FFA363EA}.Debug|x64.ActiveCfg = Debug|x64
+		{B2490BD5-8C76-47B7-88D4-EEE6FFA363EA}.Debug|x64.Build.0 = Debug|x64
+		{B2490BD5-8C76-47B7-88D4-EEE6FFA363EA}.Release|x64.ActiveCfg = Release|x64
+		{B2490BD5-8C76-47B7-88D4-EEE6FFA363EA}.Release|x64.Build.0 = Release|x64
+		{BDF7665C-BF04-4AEE-B81A-508EB1F3A1A8}.Debug|x64.ActiveCfg = Debug|x64
+		{BDF7665C-BF04-4AEE-B81A-508EB1F3A1A8}.Debug|x64.Build.0 = Debug|x64
+		{BDF7665C-BF04-4AEE-B81A-508EB1F3A1A8}.Release|x64.ActiveCfg = Release|x64
+		{BDF7665C-BF04-4AEE-B81A-508EB1F3A1A8}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CABE977-BA5F-408C-A897-DA92EBCF99E3}
+	EndGlobalSection
+EndGlobal
