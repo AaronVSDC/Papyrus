@@ -4,6 +4,7 @@
 //for use by Papyrus applications
 
 #include "Papyrus\Application.h"
+#include "Papyrus\Log.h" 
 
 //-----------------------------
 //ENTRY POINT

@@ -10,7 +10,7 @@ public:
 
 };
 
-Papyrus::Application* Papyrus::CreateApplication()
+Papyrus::Application* Papyrus::createApplication()
 {
 	return new PapyrusApp();
 }

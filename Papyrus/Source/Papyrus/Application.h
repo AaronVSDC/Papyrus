@@ -18,7 +18,7 @@ namespace Papyrus
 	};
 
 	//To be defined in client
-	Application* CreateApplication();
+	Application* createApplication();
 
 }
 

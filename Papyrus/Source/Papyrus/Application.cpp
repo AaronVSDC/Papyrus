@@ -1,5 +1,4 @@
 #include "Application.h"
-#include <iostream>
 
 namespace Papyrus 
 {
@@ -12,7 +11,7 @@ namespace Papyrus
 	}
 	void Application::run()
 	{
-		std::cout << "shit\n"; 
+		
 	}
 
 }
