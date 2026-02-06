@@ -5,13 +5,13 @@
 
 extern Papyrus::Application* Papyrus::CreateApplication(); 
 
-
-int main(int argc, char** argv) 
+ 
+int main(int, char**) 
 {
 	auto app = Papyrus::CreateApplication(); 
 	app->run();
 	delete app;
 }
-#endif
+#endif 
 
 #endif
