@@ -1,5 +1,4 @@
 #include "Application.h"
-
 namespace Papyrus 
 {
 	Application::Application()
@@ -11,7 +10,7 @@ namespace Papyrus
 	}
 	void Application::run()
 	{
-		
+
 	}
 
 }

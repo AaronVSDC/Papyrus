@@ -1,3 +1,9 @@
-/bin
-/bin-int
-/.vs
+bin
+bin-int
+.vs
+**.slnx
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+**.csproj 
+ 

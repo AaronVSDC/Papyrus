@@ -16,7 +16,8 @@ int main(int, char**)
 	int var = 3; 
 	PPR_CORE_TRACE("var={0}", var); 
 
-	auto app = Papyrus::createApplication(); 
+
+	auto app = Papyrus::createApplication();
 	app->run();
 	delete app;
 }
