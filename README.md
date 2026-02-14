@@ -3,5 +3,5 @@ Papyrus Engine.
 
 
 
-## How to build: 
+## How to build
 Run the generateProjects.bat.
