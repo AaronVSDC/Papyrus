@@ -19,7 +19,7 @@ namespace Papyrus
 		s_ClientLogger = spdlog::stdout_color_mt("APPLICATION"); 
 		s_ClientLogger->set_level(spdlog::level::trace); 
 
-		s_CoreLogger->info("INITIALIZED LOG!"); 
+		s_CoreLogger->info("LOGGER INITIALIZED");  
 	}
 
 

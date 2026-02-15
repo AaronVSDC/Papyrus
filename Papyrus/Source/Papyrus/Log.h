@@ -25,19 +25,36 @@ namespace Papyrus
 	};
 }
 
-//todo: redefine these for release builds so that logging gets removed in release.
+//TODO: redefine these for release builds so that logging gets removed in release.
+
 
 #define PPR_CORE_CRITICAL(...) ::Papyrus::Log::getCoreLogger()->critical(__VA_ARGS__)  
 #define PPR_CORE_ERROR(...)    ::Papyrus::Log::getCoreLogger()->error(__VA_ARGS__)
 #define PPR_CORE_WARN(...)     ::Papyrus::Log::getCoreLogger()->warn(__VA_ARGS__) 
 #define PPR_CORE_TRACE(...)    ::Papyrus::Log::getCoreLogger()->trace(__VA_ARGS__)  
 #define PPR_CORE_INFO(...)     ::Papyrus::Log::getCoreLogger()->info(__VA_ARGS__) 
-									   
+								    
 #define PPR_CRITICAL(...)	   ::Papyrus::Log::getClientLogger()->critical(__VA_ARGS__)
 #define PPR_ERROR(...)	       ::Papyrus::Log::getClientLogger()->error(__VA_ARGS__)
 #define PPR_WARN(...)	       ::Papyrus::Log::getClientLogger()->warn(__VA_ARGS__) 
 #define PPR_TRACE(...)	       ::Papyrus::Log::getClientLogger()->trace(__VA_ARGS__) 
 #define PPR_INFO(...)	       ::Papyrus::Log::getClientLogger()->info(__VA_ARGS__)
+
+//#elif defined(PPR_RELEASE) 
+//
+//	#define PPR_CORE_CRITICAL 
+//	#define PPR_CORE_ERROR    
+//	#define PPR_CORE_WARN     
+//	#define PPR_CORE_TRACE
+//	#define PPR_CORE_INFO
+//
+//	#define PPR_CRITICAL
+//	#define PPR_ERROR    
+//	#define PPR_WARN	       
+//	#define PPR_TRACE	       
+//	#define PPR_INFO	       
+//
+//#endif
 
 
 
