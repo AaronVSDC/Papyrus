@@ -8,7 +8,6 @@ extern Papyrus::Application* Papyrus::createApplication();
  
 int main(int, char**) 
 {
-	Papyrus::Log::init(); 
 	auto app = Papyrus::createApplication();
 	app->run();
 	delete app;
