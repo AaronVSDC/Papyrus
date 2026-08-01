@@ -12,6 +12,12 @@ namespace Papyrus
 	class PAPYRUS_API Log 
 	{
 	public:  
+
+		Log(Log&) = delete; 
+		Log(Log&&) = delete; 
+		Log& operator=(Log&) = delete; 
+		Log& operator=(Log&&) = delete;
+
 		static void init(); 
 
 		static std::shared_ptr<spdlog::logger>& getCoreLogger() { return s_CoreLogger;  }
@@ -26,7 +32,10 @@ namespace Papyrus
 }
 
 
+
 #if defined PPR_DEBUG
+	
+	#define PPR_LOG_INIT ::Papyrus::Log::init()
 
 	#define PPR_CORE_CRITICAL(...) ::Papyrus::Log::getCoreLogger()->critical(__VA_ARGS__)  
 	#define PPR_CORE_ERROR(...)    ::Papyrus::Log::getCoreLogger()->error(__VA_ARGS__)
@@ -40,7 +49,7 @@ namespace Papyrus
 	#define PPR_TRACE(...)	       ::Papyrus::Log::getClientLogger()->trace(__VA_ARGS__) 
 	#define PPR_INFO(...)	       ::Papyrus::Log::getClientLogger()->info(__VA_ARGS__)
 
-	//do while(0) is a little trick to avoid logical collisions with the client when the macro expands, 
+	// do while(0) is a little trick to avoid logical collisions with the client when the macro expands, 
 	// ex the client does something like this:
 	// if(x) 
 	//    PPR_CORE_CRITICAL_COND(y, "error"); 
@@ -63,6 +72,7 @@ namespace Papyrus
 
 #if defined PPR_RELEASE
 
+	#define PPR_LOG_INIT 
 	#define PPR_CORE_CRITICAL 
 	#define PPR_CORE_ERROR    
 	#define PPR_CORE_WARN     

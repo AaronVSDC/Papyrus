@@ -25,7 +25,8 @@ project "Papyrus"
 
 	includedirs
 	{
-		"Papyrus/Vendor/spdlog/include" 
+		"%{prj.name}/Source",
+		"%{prj.name}/Vendor/spdlog/include" 
 	}
 
 	filter "system:windows"
@@ -72,7 +73,7 @@ project "PapyrusApp"
 
 	includedirs 
 	{
-		"Papyrus/Vendor/spdlog/include", 
+		"%{prj.name}/Vendor/spdlog/include", 
 		"Papyrus/Source" 
 	}
 
