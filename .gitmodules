@@ -1,3 +1,0 @@
-[submodule "Papyrus/Vendor/spdlog"]
-	path = Papyrus/Vendor/spdlog
-	url = https://github.com/gabime/spdlog

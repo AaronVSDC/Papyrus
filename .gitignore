@@ -1,9 +1,4 @@
 /bin
-/bin-int
-.vs
-**.slnx
-**.vcxproj
-**.vcxproj.filters
-**.vcxproj.user
-**.csproj 
-  
+/cmake-build-debug
+/cmake-build-release
+/Papyrus/vendor
