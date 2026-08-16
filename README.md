@@ -4,4 +4,4 @@ Papyrus Engine.
 
 
 ## How to build
-Run the build.bat.
+Cmake does everything and pulls and links all dependencies, no need for manual labour.
