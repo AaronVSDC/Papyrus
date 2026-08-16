@@ -6,6 +6,7 @@
 
 #include "Core/Core.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace Papyrus
 {
@@ -68,9 +69,7 @@ namespace Papyrus
 	#define PPR_TRACE_COND(condition, ...)        do {if((condition)) ::Papyrus::Log::getClientLogger()->trace(__VA_ARGS__);}    while(0)
 	#define PPR_INFO_COND(condition, ...)         do {if((condition)) ::Papyrus::Log::getClientLogger()->info(__VA_ARGS__);}     while(0)
 
-#endif
-
-#if defined PPR_RELEASE
+#elif defined(PPR_RELEASE)
 
 	#define PPR_LOG_INIT 
 	#define PPR_CORE_CRITICAL 

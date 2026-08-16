@@ -1,5 +1,7 @@
 #include "Application.h"
-#include "../Log.h"
+#include "Papyrus/Log.h"
+#include "Papyrus/Events/ApplicationEvent.h"
+
 namespace Papyrus 
 {
 	Application::Application()
@@ -12,7 +14,9 @@ namespace Papyrus
 	}
 	void Application::run()
 	{
-		PPR_CORE_ERROR("error");
+
+		WindowResizeEvent e(20, 20); 
+		PPR_TRACE(e);
 	}
 
 }

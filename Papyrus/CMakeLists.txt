@@ -12,11 +12,12 @@ add_library(Papyrus SHARED
         source/Papyrus/Log.cpp
         source/Papyrus/Core/Application.cpp
         source/Papyrus/Core/Core.h
-        source/Papyrus/Core/EntryPoint.h
+        source/Papyrus/Core/EntryPoint.h 
         source/Papyrus/Core/KeyCodes.h
         source/Papyrus/Events/Event.h
         source/Papyrus/Events/KeyEvent.h
-)
+        source/Papyrus/Events/MouseEvent.h
+        source/Papyrus/Events/ApplicationEvent.h "ppch.h")
 
 target_include_directories(Papyrus
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/source

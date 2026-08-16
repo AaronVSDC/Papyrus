@@ -7,7 +7,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON) #turned on for clion implicitly ignored by
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
-include(outputDirectories)
+include(outputDirectories) 
 include(vendor)
 
 #compile definitions
@@ -17,7 +17,7 @@ elseif(UNIX)
     add_compile_definitions(PPR_PLATFORM_LINUX)
 endif()
 add_compile_definitions($<$<CONFIG:Debug>:PPR_DEBUG>)
-add_compile_definitions($<$<CONFIG:Release>:PPR_RELEASE>)
+add_compile_definitions($<$<CONFIG:Release>:PPR_RELEASE>) 
 
 
 

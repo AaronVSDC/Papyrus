@@ -4,7 +4,7 @@ add_executable(PapyrusApp
 target_link_libraries(PapyrusApp PRIVATE Papyrus)
 
 target_compile_definitions(PapyrusApp PRIVATE ENTRY_POINT)
-target_precompile_headers(PapyrusApp PRIVATE ${CMAKE_SOURCE_DIR}/Papyrus/source/Papyrus.h)
+target_precompile_headers(PapyrusApp PRIVATE ${CMAKE_SOURCE_DIR}/ppch.h)
 
 papyrus_set_output_dirs(PapyrusApp)
 
