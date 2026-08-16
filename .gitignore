@@ -1,6 +1,7 @@
 /bin
 /cmake-build-debug
 /cmake-build-release
+/build-output
 /Papyrus/vendor
 /out
 /.vs
