@@ -1,8 +1,6 @@
 #ifndef LOG_H
 #define LOG_H
 
-//std
-#include <memory>
 
 #include "Core/Core.h"
 #include "spdlog/spdlog.h"

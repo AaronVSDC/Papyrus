@@ -17,7 +17,7 @@ add_library(Papyrus SHARED
         source/Papyrus/Events/Event.h
         source/Papyrus/Events/KeyEvent.h
         source/Papyrus/Events/MouseEvent.h
-        source/Papyrus/Events/ApplicationEvent.h "ppch.h")
+        source/Papyrus/Events/ApplicationEvent.h)
 
 target_include_directories(Papyrus
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/source
@@ -25,7 +25,7 @@ target_include_directories(Papyrus
 
 target_link_libraries(Papyrus PUBLIC spdlog::spdlog)
 
-target_precompile_headers(Papyrus PRIVATE source/Papyrus.h)
+target_precompile_headers(Papyrus PRIVATE ppch.h)
 
 target_compile_definitions(Papyrus PRIVATE PPR_BUILD_DLL)
 
