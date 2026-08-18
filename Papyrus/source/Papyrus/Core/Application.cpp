@@ -7,6 +7,7 @@ namespace Papyrus
 	Application::Application()
 	{
 		PPR_LOG_INIT;
+		m_Window = std::unique_ptr<Window>(Window::create()); 
 	}
 
 	Application::~Application()
@@ -14,9 +15,10 @@ namespace Papyrus
 	}
 	void Application::run()
 	{
-
-		WindowResizeEvent e(20, 20); 
-		PPR_TRACE(e);
+		while (m_Running)
+		{
+			m_Window->update(); 
+		}
 	}
 
 }

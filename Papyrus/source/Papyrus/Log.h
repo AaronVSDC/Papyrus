@@ -30,12 +30,21 @@ namespace Papyrus
 	};
 }
 
-
+#if defined(PPR_PLATFORM_WINDOWS)
+	#define PPR_DEBUGBREAK() __debugbreak()
+#elif defined(PPR_PLATFORM_LINUX)
+	#include <csignal>
+	#define PPR_DEBUGBREAK() raise(SIGTRAP)
+#else
+	#error "PPR_DEBUGBREAK only supported on Windows and Linux."
+#endif
 
 #if defined PPR_DEBUG
 	
 	#define PPR_LOG_INIT ::Papyrus::Log::init()
 
+	//LOGGING
+	//--------------
 	#define PPR_CORE_CRITICAL(...) ::Papyrus::Log::getCoreLogger()->critical(__VA_ARGS__)  
 	#define PPR_CORE_ERROR(...)    ::Papyrus::Log::getCoreLogger()->error(__VA_ARGS__)
 	#define PPR_CORE_WARN(...)     ::Papyrus::Log::getCoreLogger()->warn(__VA_ARGS__) 
@@ -67,6 +76,13 @@ namespace Papyrus
 	#define PPR_TRACE_COND(condition, ...)        do {if((condition)) ::Papyrus::Log::getClientLogger()->trace(__VA_ARGS__);}    while(0)
 	#define PPR_INFO_COND(condition, ...)         do {if((condition)) ::Papyrus::Log::getClientLogger()->info(__VA_ARGS__);}     while(0)
 
+
+	//ASSERT
+	//-----------
+	#define PPR_ASSERT(condition, ...)      do { if(!(condition)) { PPR_ERROR("Assertion Failed: {0}", __VA_ARGS__); PPR_DEBUGBREAK(); } } while(0)
+	#define PPR_CORE_ASSERT(condition, ...) do { if(!(condition)) { PPR_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); PPR_DEBUGBREAK(); } } while(0)
+
+
 #elif defined(PPR_RELEASE)
 
 	#define PPR_LOG_INIT 
@@ -92,7 +108,13 @@ namespace Papyrus
 	#define PPR_ERROR_COND   
 	#define PPR_WARN_COND	       
 	#define PPR_TRACE_COND       
-	#define PPR_INFO_COND	     
+	#define PPR_INFO_COND	
+
+
+	#define PPR_ASSERT(condition, ...)     
+	#define PPR_CORE_ASSERT(condition, ...)
+
+
 
 
 #endif

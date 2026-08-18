@@ -89,11 +89,11 @@ namespace Papyrus
 		return os << e.toString();
 	}
 
-	template <typename T>
-	struct fmt::formatter<T, std::enable_if_t<std::is_base_of_v<Papyrus::Event, T>, char>>
-		: fmt::ostream_formatter
-	{
-	};
+	//template <typename T>
+	//struct fmt::formatter<T, std::enable_if_t<std::is_base_of_v<Papyrus::Event, T>, char>>
+	//	: fmt::ostream_formatter
+	//{
+	//};
 }
 
 
