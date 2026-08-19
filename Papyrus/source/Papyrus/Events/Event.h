@@ -1,6 +1,7 @@
 #ifndef PAPYRUS_EVENT_H
 #define PAPYRUS_EVENT_H
 #include "Papyrus/Core/Core.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace Papyrus
 {
@@ -10,7 +11,7 @@ namespace Papyrus
 	{
 		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped, 
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
@@ -24,7 +25,7 @@ namespace Papyrus
 		EventCategoryMouseButton = BIT(4)
 	};
 
-#define EVENT_CLASS_TYPE(type) static EventType getStaticType() {return EventType::type; }\
+#define EVENT_CLASS_TYPE(type) static EventType getStaticType() {return EventType::##type; }\
 							   virtual EventType getEventType() const override {return getStaticType(); }\
 							   virtual const char* getName() const override {return #type; }
 
@@ -89,11 +90,11 @@ namespace Papyrus
 		return os << e.toString();
 	}
 
-	//template <typename T>
-	//struct fmt::formatter<T, std::enable_if_t<std::is_base_of_v<Papyrus::Event, T>, char>>
-	//	: fmt::ostream_formatter
-	//{
-	//};
+	template <typename T>
+	struct fmt::formatter<T, std::enable_if_t<std::is_base_of_v<Papyrus::Event, T>, char>>
+		: fmt::ostream_formatter
+	{
+	};
 }
 
 

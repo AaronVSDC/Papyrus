@@ -20,7 +20,7 @@ namespace Papyrus
 
 	};
 
-	class PAPYRUS_API KeyPressedEvent : KeyEvent
+	class PAPYRUS_API KeyPressedEvent : public KeyEvent
 	{
 	public: 
 		KeyPressedEvent(int keycode, bool isRepeat = false)

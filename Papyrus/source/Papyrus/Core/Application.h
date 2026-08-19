@@ -3,6 +3,8 @@
 
 #include "Core.h"
 #include "Window.h"
+#include "Papyrus/Events/ApplicationEvent.h"
+
 namespace Papyrus
 {
 	
@@ -15,7 +17,11 @@ namespace Papyrus
 		virtual ~Application();  
 
 		void run(); 
+
+		void onEvent(Event& e); 
 	private:
+		bool onWindowClose(WindowCloseEvent& e);
+
 		std::unique_ptr<Window> m_Window; 
 		bool m_Running = true; 
 	};
