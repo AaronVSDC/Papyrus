@@ -22,8 +22,9 @@ add_library(Papyrus SHARED
         source/Papyrus/Events/KeyEvent.h
         source/Papyrus/Events/MouseEvent.h
         source/Papyrus/Events/ApplicationEvent.h
-        source/Papyrus/Core/Window.h
-        source/Papyrus/Platform/Windows/WindowsWindow.cpp)
+        source/Papyrus/Core/Window.cpp
+        source/Papyrus/Platform/Windows/WindowsWindow.cpp
+        source/Papyrus/Platform/Linux/LinuxWindow.cpp)
 
 target_include_directories(Papyrus
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/source

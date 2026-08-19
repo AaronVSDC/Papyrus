@@ -1,5 +1,5 @@
-#ifndef ENTRY_POINT_H
-#define ENTRY_POINT_H
+#ifndef PAPYRUS_ENTRY_POINT_H
+#define PAPYRUS_ENTRY_POINT_H
 
 //todo: think if it could be useful to have different main functions for linux and windows (wwinmain) .
 

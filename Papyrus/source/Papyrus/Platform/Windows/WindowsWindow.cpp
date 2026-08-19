@@ -5,11 +5,6 @@ namespace Papyrus
 {
 	static bool s_GLFWInitialized = false;
 
-	Window* Window::create(const WindowProps& props)
-	{
-		return new WindowsWindow(props);
-	}
-
 	WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
 		init(props); 
@@ -26,7 +21,7 @@ namespace Papyrus
 		m_Data.width = props.width; 
 		m_Data.height = props.height;
 
-		PPR_CORE_INFO("Creating window {0} ({1}, {2})", props.title, props.width, props.height); 
+		PPR_CORE_INFO("Creating WindowsWindow {0} ({1}, {2})", props.title, props.width, props.height); 
 
 		if (!s_GLFWInitialized)
 		{
