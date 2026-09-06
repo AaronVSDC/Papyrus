@@ -1,7 +1,7 @@
 #ifndef PAPYRUS_WINDOW_H
 #define PAPYRUS_WINDOW_H
 #include "Papyrus/Core/Core.h"
-#include "Papyrus/Events/Event.h"
+#include "Papyrus/Event/Event.h"
 
 namespace Papyrus
 {
@@ -25,18 +25,15 @@ namespace Papyrus
         Window& operator=(Window&) = delete; 
         Window& operator=(Window&&) = delete; 
 
-        using EventCallbackFn = std::function<void(Event&)>;
-
         virtual ~Window() {}
 
         virtual void update() = 0; 
 
-        virtual unsigned int getWidth() const = 0; 
-        virtual unsigned int getHeight() const = 0; 
+        virtual unsigned int width() const = 0;
+        virtual unsigned int height() const = 0;
 
-        virtual void setEventCallback(const EventCallbackFn& callback) = 0; 
-        virtual void setVSync(bool enabled) = 0; 
-        virtual bool isVSync() const = 0; 
+        // virtual void setVSync(bool enabled) = 0;
+        // virtual bool isVSync() const = 0;
 
         static Window* create(const WindowProps& props = WindowProps()); 
 

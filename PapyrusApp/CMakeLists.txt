@@ -1,6 +1,15 @@
 add_executable(PapyrusApp
     source/PapyrusApp.cpp)
 
+if(WIN32)
+    set_target_properties(PapyrusApp PROPERTIES WIN32_EXECUTABLE TRUE)
+endif()
+
+if(MINGW)
+    target_compile_options(PapyrusApp PRIVATE -municode)
+    target_link_options(PapyrusApp PRIVATE -municode)
+endif()
+
 target_link_libraries(PapyrusApp PRIVATE Papyrus)
 
 target_compile_definitions(PapyrusApp PRIVATE ENTRY_POINT)

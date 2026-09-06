@@ -17,14 +17,17 @@ add_library(Papyrus SHARED
         source/Papyrus/Core/Application.cpp
         source/Papyrus/Core/Core.h
         source/Papyrus/Core/EntryPoint.h 
-        source/Papyrus/Core/KeyCodes.h
-        source/Papyrus/Events/Event.h
-        source/Papyrus/Events/KeyEvent.h
-        source/Papyrus/Events/MouseEvent.h
-        source/Papyrus/Events/ApplicationEvent.h
+        source/Papyrus/Core/KeyCodes.h 
+        source/Papyrus/Event/Event.cpp
+        source/Papyrus/Event/EventSystem.cpp
+        source/Papyrus/Event/EventListener.cpp
+        source/Papyrus/Core/Time.cpp
         source/Papyrus/Core/Window.cpp
         source/Papyrus/Platform/Windows/WindowsWindow.cpp
-        source/Papyrus/Platform/Linux/LinuxWindow.cpp)
+        source/Papyrus/Platform/Linux/LinuxWindow.cpp
+        source/Papyrus/Debug/DebugName.h
+        source/Papyrus/Event/EventPool.h
+        source/Papyrus/Debug/EventFormatter.h)
 
 target_include_directories(Papyrus
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/source

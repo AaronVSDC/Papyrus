@@ -1,5 +1,5 @@
-#ifndef LOG_H
-#define LOG_H
+#ifndef PAPYRUSENGINE_LOG_H
+#define PAPYRUSENGINE_LOG_H
 
 
 #include "Core/Core.h"
@@ -7,7 +7,7 @@
 
 namespace Papyrus
 {
-	class PAPYRUS_API Log 
+	class PAPYRUS_API Log final
 	{
 	public:  
 
@@ -84,30 +84,30 @@ namespace Papyrus
 
 #elif defined(PPR_RELEASE)
 
-	#define PPR_LOG_INIT 
-	#define PPR_CORE_CRITICAL 
-	#define PPR_CORE_ERROR    
-	#define PPR_CORE_WARN     
-	#define PPR_CORE_TRACE
-	#define PPR_CORE_INFO
+	#define PPR_LOG_INIT(...)
+	#define PPR_CORE_CRITICAL(...)
+	#define PPR_CORE_ERROR(...)
+	#define PPR_CORE_WARN(...)
+	#define PPR_CORE_TRACE(...)
+	#define PPR_CORE_INFO(...)
 
-	#define PPR_CRITICAL
-	#define PPR_ERROR    
-	#define PPR_WARN	       
-	#define PPR_TRACE	       
-	#define PPR_INFO	     
+	#define PPR_CRITICAL(...)
+	#define PPR_ERROR(...)
+	#define PPR_WARN(...)
+	#define PPR_TRACE(...)
+	#define PPR_INFO(...)
 
-	#define PPR_CORE_CRITICAL_COND
-	#define PPR_CORE_ERROR_COND  
-	#define PPR_CORE_WARN_COND    
-	#define PPR_CORE_TRACE_COND
-	#define PPR_CORE_INFO_COND
+	#define PPR_CORE_CRITICAL_COND(...)
+	#define PPR_CORE_ERROR_COND(...)
+	#define PPR_CORE_WARN_COND(...)
+	#define PPR_CORE_TRACE_COND(...)
+	#define PPR_CORE_INFO_COND(...)
 
-	#define PPR_CRITICAL_COND
-	#define PPR_ERROR_COND   
-	#define PPR_WARN_COND	       
-	#define PPR_TRACE_COND       
-	#define PPR_INFO_COND	
+	#define PPR_CRITICAL_COND(...)
+	#define PPR_ERROR_COND(...)
+	#define PPR_WARN_COND(...)
+	#define PPR_TRACE_COND(...)
+	#define PPR_INFO_COND(...)
 
 
 	#define PPR_ASSERT(condition, ...)     

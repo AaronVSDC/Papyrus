@@ -1,44 +1,37 @@
-#ifndef PAPYRUS_WINDOWS_WINDOW_H
-#define PAPYRUS_WINDOWS_WINDOW_H
+#ifndef PAPYRUSENGINE_WINDOWS_WINDOW_H
+#define PAPYRUSENGINE_WINDOWS_WINDOW_H
 
-#include <GLFW/glfw3.h>
 #include "Papyrus/Core/Window.h"
 
 namespace Papyrus
 {
-	class WindowsWindow : public Window
+	class WindowsWindow final : public Window
 	{
 	public: 
 		WindowsWindow(const WindowProps& props); 
-		virtual ~WindowsWindow(); 
+		~WindowsWindow() override;
 
 		void update() override; 
 
-		inline unsigned int getWidth() const override { return m_Data.width; }
-		inline unsigned int getHeight() const override { return m_Data.height; }
+		[[nodiscard]] unsigned int width() const override { return m_Width; }
+		[[nodiscard]] unsigned int height() const override { return m_Height; }
 
-		inline void setEventCallback(const EventCallbackFn& callback) override { m_Data.eventCallback = callback; }
-		void setVSync(bool enabled) override;
-		bool isVSync() const override; 
+		//void setVSync(bool enabled) override;
+		//bool isVSync() const override;
+
+		[[nodiscard]] HWND handle() const {return m_WindowHandle;}
 	private: 
-		virtual void init(const WindowProps& props); 
-		virtual void shutdown(); 
+		void init();
+		void shutdown();
 
+		static LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 	private: 
 
-		GLFWwindow* m_Window; 
+		HWND m_WindowHandle = nullptr;
 
-		struct WindowData
-		{
-			std::string title; 
-			unsigned int width, height; 
-			bool vSync; 
-
-			EventCallbackFn eventCallback; 
-		};
-
-		WindowData m_Data; 
-
+		std::string m_Title;
+		unsigned int m_Width, m_Height;
+		//bool m_VSync;
 
 	};
 }

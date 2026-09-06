@@ -1,13 +1,14 @@
 #include "Application.h"
 #include "Papyrus/Log.h"
-
+#include "Papyrus/Core/Time.h"
+#include "Papyrus/Event/EventSystem.h"
 namespace Papyrus 
 {
 	Application::Application()
 	{
 		PPR_LOG_INIT;
-		m_Window = std::unique_ptr<Window>(Window::create()); 
-		m_Window->setEventCallback([this](Event& e) {onEvent(e); });
+		m_Window = std::unique_ptr<Window>(Window::create());
+		EventSystem::subscribeAll(this);
 	}
 
 	Application::~Application()
@@ -15,25 +16,33 @@ namespace Papyrus
 	}
 	void Application::run()
 	{
+
+		auto lastTime = std::chrono::high_resolution_clock::now(); 
 		while (m_Running)
 		{
-			m_Window->update(); 
+			const auto currentTime = std::chrono::high_resolution_clock::now(); 
+			const double deltaTime = std::chrono::duration<double>(currentTime - lastTime).count(); 
+			lastTime = currentTime; 
+
+			Time::update(deltaTime); 
+			m_Window->update();
+
 		}
 	}
 
 	void Application::onEvent(Event& e)
 	{
+		switch (e.getType())
+		{
+			case PPR_SID("EVENT_WINDOW_CLOSE"):
+			{
+				m_Running = false;
+			}
+		}
 
-		EventDispatcher dispatcher(e);
-		bool success = dispatcher.dispatch<WindowCloseEvent>([this](WindowCloseEvent& e) { return onWindowClose(e); });
+		PPR_CORE_TRACE("{0}", e.toDebugString());
 
-		PPR_CORE_TRACE("{0}", e); 
-	}
 
-	bool Application::onWindowClose(WindowCloseEvent& e)
-	{
-		m_Running = false; 
-		return true;
 	}
 
 }

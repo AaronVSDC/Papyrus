@@ -3,12 +3,13 @@
 
 #include "Core.h"
 #include "Window.h"
-#include "Papyrus/Events/ApplicationEvent.h"
+#include "Papyrus/Event/Event.h"
+#include "Papyrus/Event/EventListener.h"
 
 namespace Papyrus
 {
 	
-	class PAPYRUS_API Application
+	class PAPYRUS_API Application : public EventListener
 	{
 
 	public: 
@@ -18,11 +19,9 @@ namespace Papyrus
 
 		void run(); 
 
-		void onEvent(Event& e); 
+		void onEvent(Event& e) override;
 	private:
-		bool onWindowClose(WindowCloseEvent& e);
-
-		std::unique_ptr<Window> m_Window; 
+		std::unique_ptr<Window> m_Window;
 		bool m_Running = true; 
 	};
 
