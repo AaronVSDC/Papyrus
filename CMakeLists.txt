@@ -13,6 +13,7 @@ include(vendor)
 #compile definitions
 if(WIN32)
     add_compile_definitions(PPR_PLATFORM_WINDOWS)
+    add_compile_definitions(UNICODE _UNICODE)
 elseif(UNIX)
     add_compile_definitions(PPR_PLATFORM_LINUX)
 endif()

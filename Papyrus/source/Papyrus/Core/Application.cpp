@@ -27,6 +27,8 @@ namespace Papyrus
 			Time::update(deltaTime); 
 			m_Window->update();
 
+			EventSystem::dispatchQueuedEvents(Time::totalTime());
+
 		}
 	}
 
